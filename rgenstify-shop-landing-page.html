@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="rgenstify — Practical digital tools for first-time landlords and small salons. Instant download, no subscriptions." />
+<link rel="icon" href="data:," />
+<title>rgenstify — Practical Digital Tools for Landlords &amp; Small Salons</title>
+<style>
+  :root{
+    --green-950:#0b231a;
+    --green-900:#0f2e22;
+    --green-800:#143a2b;
+    --green-700:#1a4a36;
+    --gold:#c9a227;
+    --gold-strong:#a9871c;
+    --gold-soft:#f3e8c3;
+    --bg:#f7f5ef;
+    --surface:#ffffff;
+    --surface-2:#f0ede3;
+    --ink:#1c2420;
+    --muted:#5c665f;
+    --line:#ddd8c8;
+    --btn-ink:#ffffff;
+    --shadow:0 10px 30px rgba(11,35,26,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d1512;
+      --surface:#15211c;
+      --surface-2:#1a2a23;
+      --ink:#eef0ea;
+      --muted:#a8b3ab;
+      --line:#2c3d34;
+      --gold-soft:#2e2a18;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family: Georgia, "Times New Roman", serif; line-height:1.15; margin:0; font-weight:700;}
+  p{margin:0}
+  a{color:inherit}
+  .wrap{max-width:1020px; margin:0 auto; padding:0 20px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--green-900);
+    color:#f4f1e6;
+    padding:56px 0 48px;
+    border-bottom:4px solid var(--gold);
+  }
+  .brand-row{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .monogram{
+    width:58px; height:58px; flex:0 0 58px;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    display:grid; place-items:center;
+    font-family:Georgia, serif; font-size:30px; font-weight:700; color:var(--gold);
+    background:var(--green-950);
+  }
+  .brand-name{font-family:Georgia, serif; font-size:clamp(34px,6vw,52px); letter-spacing:.01em; line-height:1;}
+  .brand-sub{color:#cdbf8f; font-size:13px; letter-spacing:.14em; text-transform:uppercase; margin-top:6px;}
+  .hero-tagline{
+    margin-top:28px;
+    font-family:Georgia, serif;
+    font-size:clamp(24px,4.2vw,36px);
+    line-height:1.25;
+    max-width:640px;
+  }
+  .hero-line{margin-top:14px; color:#d9d4c2; font-size:17px; max-width:560px;}
+  .hero-points{
+    margin-top:26px; display:flex; flex-wrap:wrap; gap:10px;
+    list-style:none; padding:0;
+  }
+  .hero-points li{
+    border:1px solid rgba(201,162,39,.55);
+    color:#efe9d3;
+    padding:8px 14px; border-radius:999px; font-size:14px;
+    background:rgba(255,255,255,.04);
+  }
+  .hero-points li strong{color:var(--gold); font-weight:700;}
+
+  /* ---------- Sections ---------- */
+  main{padding:40px 0 8px;}
+  .section-label{
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-strong); font-weight:700; margin-bottom:10px;
+  }
+  @media (prefers-color-scheme: dark){ .section-label{color:var(--gold);} }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    padding:28px;
+    margin-bottom:28px;
+  }
+  .card-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
+  .card h2{font-size:clamp(24px,3.6vw,32px);}
+  .card .lede{margin-top:10px; color:var(--muted); font-size:16.5px; max-width:640px;}
+  .price{
+    text-align:right; flex:0 0 auto;
+  }
+  .price .amount{font-family:Georgia, serif; font-size:36px; font-weight:700; color:var(--green-800); line-height:1;}
+  @media (prefers-color-scheme: dark){ .price .amount{color:#e9e2c8;} }
+  .price .per{font-size:13px; color:var(--muted); margin-top:4px;}
+  .badge{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    background:var(--gold); color:#231d05; padding:5px 10px; border-radius:6px; margin-bottom:12px;
+  }
+  .badge-free{background:var(--green-700); color:#fff;}
+
+  .includes{
+    margin:22px 0 4px; padding:0; list-style:none;
+    display:grid; grid-template-columns:1fr 1fr; gap:10px 22px;
+  }
+  .includes li{
+    display:flex; gap:10px; align-items:flex-start; font-size:15.5px;
+    padding:10px 12px; background:var(--surface-2); border-radius:8px;
+  }
+  .includes li::before{
+    content:""; flex:0 0 8px; width:8px; height:8px; border-radius:50%;
+    background:var(--gold); margin-top:8px;
+  }
+  .includes li span b{font-weight:700;}
+  .meta-row{
+    margin-top:18px; display:flex; flex-wrap:wrap; gap:8px 18px;
+    font-size:14px; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:16px;
+  }
+  .meta-row strong{color:var(--ink);}
+
+  .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:52px; padding:13px 22px;
+    border-radius:10px; font-size:16px; font-weight:700; text-decoration:none;
+    border:2px solid transparent; text-align:center;
+  }
+  .btn-primary{background:var(--green-800); color:#fff; border-color:var(--green-800);}
+  .btn-primary:hover{background:var(--green-700);}
+  .btn-gold{background:var(--gold); color:#231d05; border-color:var(--gold);}
+  .btn-gold:hover{background:#d9b23a;}
+  .btn-outline{background:transparent; color:var(--ink); border-color:var(--line);}
+  .btn-outline:hover{border-color:var(--gold-strong);}
+  .btn:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  /* Free card accent */
+  .card-free{border-color:var(--gold); border-width:2px;}
+  .free-price .amount{color:var(--green-700);}
+  @media (prefers-color-scheme: dark){ .free-price .amount{color:var(--gold);} }
+  .checklist-note{
+    margin-top:16px; background:var(--gold-soft); border-radius:8px; padding:14px 16px; font-size:15px;
+  }
+
+  /* About */
+  .about{
+    background:var(--green-900); color:#ece8d8; border-radius:14px; padding:28px; margin-bottom:28px;
+    border-bottom:4px solid var(--gold);
+  }
+  .about h2{color:#fff; font-size:26px;}
+  .about p{margin-top:10px; max-width:640px; color:#d9d4c2; font-size:16.5px;}
+  .about a.reddit{
+    display:inline-flex; align-items:center; min-height:48px; margin-top:18px;
+    padding:10px 18px; border:1px solid var(--gold); border-radius:10px;
+    color:var(--gold); font-weight:700; text-decoration:none;
+  }
+  .about a.reddit:hover{background:rgba(201,162,39,.12);}
+
+  footer{padding:8px 0 44px; color:var(--muted); font-size:14px;}
+  footer .foot-card{
+    border-top:1px solid var(--line); padding-top:20px;
+    display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  footer strong{color:var(--ink);}
+
+  @media (max-width:640px){
+    .hero{padding:40px 0 36px;}
+    .card{padding:22px 18px;}
+    .about{padding:22px 18px;}
+    .includes{grid-template-columns:1fr;}
+    .price{text-align:left;}
+    .card-head{flex-direction:column;}
+    .actions .btn{flex:1 1 100%;}
+    .brand-row{gap:12px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand-row">
+      <div class="monogram" aria-hidden="true">R</div>
+      <div>
+        <div class="brand-name">rgenstify</div>
+        <div class="brand-sub">Digital Downloads &middot; Est. for Independent Operators</div>
+      </div>
+    </div>
+    <p class="hero-tagline">Practical digital tools for first-time landlords and small salons.</p>
+    <p class="hero-line">Ready-to-use templates, checklists, and spreadsheets you can put to work the same day you download them. Instant download. No subscriptions, no software to install.</p>
+    <ul class="hero-points">
+      <li><strong>Instant</strong> delivery after checkout</li>
+      <li><strong>Editable + PDF</strong> files included</li>
+      <li><strong>One-time</strong> payment &mdash; yours to keep</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- Featured product -->
+    <article class="card" aria-labelledby="landlord-title">
+      <span class="badge">Featured Product</span>
+      <div class="card-head">
+        <div>
+          <h2 id="landlord-title">First-Time Landlord Starter Kit</h2>
+          <p class="lede">Everything you need to screen tenants, document your property, track rent, and close out a tenancy properly &mdash; in one organized kit for first-time landlords.</p>
+        </div>
+        <div class="price">
+          <div class="amount">$27</div>
+          <div class="per">USD &middot; one-time payment</div>
+        </div>
+      </div>
+
+      <ul class="includes">
+        <li><span><b>Tenant screening pack</b></span></li>
+        <li><span><b>Rental application form</b></span></li>
+        <li><span><b>Move-in inspection checklist</b></span></li>
+        <li><span><b>Rent tracker spreadsheet</b></span></li>
+        <li><span><b>30 tenant message templates</b></span></li>
+        <li><span><b>Maintenance log</b></span></li>
+        <li><span><b>Move-out &amp; deposit settlement pack</b></span></li>
+        <li><span><b>Tenant welcome pack</b></span></li>
+      </ul>
+
+      <div class="meta-row">
+        <span><strong>20 files</strong> in total</span>
+        <span>Editable versions <strong>+ PDF</strong> included</span>
+        <span>Delivered <strong>instantly</strong> as a download</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://payhip.com/b/fs124" target="_blank" rel="noopener">Buy on Payhip &mdash; $27</a>
+        <a class="btn btn-gold" href="https://rgenstify.gumroad.com/l/first-time-landlord-starter-kit" target="_blank" rel="noopener">Buy on Gumroad &mdash; $27</a>
+      </div>
+    </article>
+
+    <!-- Free download -->
+    <article class="card card-free" aria-labelledby="free-title">
+      <span class="badge badge-free">Free Download</span>
+      <div class="card-head">
+        <div>
+          <h2 id="free-title">Free Tenant Screening Checklist</h2>
+          <p class="lede">New to screening? Start here. A one-page checklist, free to download &mdash; no purchase required.</p>
+        </div>
+        <div class="price free-price">
+          <div class="amount">$0</div>
+          <div class="per">Free &middot; PDF download</div>
+        </div>
+      </div>
+      <div class="checklist-note">The <strong>10 checks to run before handing over the keys</strong> &mdash; one page, in a clear step-by-step order.</div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://payhip.com/b/k2o7S" target="_blank" rel="noopener">Free on Payhip</a>
+        <a class="btn btn-outline" href="https://rgenstify.gumroad.com/l/free-tenant-screening-checklist" target="_blank" rel="noopener">Free on Gumroad</a>
+      </div>
+    </article>
+
+    <!-- Second product -->
+    <article class="card" aria-labelledby="nail-title">
+      <div class="card-head">
+        <div>
+          <h2 id="nail-title">Nail Salon Social Media Template Kit</h2>
+          <p class="lede">Polished, ready-to-post social media templates made for nail salons &mdash; no designer required.</p>
+        </div>
+        <div class="price">
+          <div class="amount">$9</div>
+          <div class="per">USD &middot; one-time payment</div>
+        </div>
+      </div>
+
+      <ul class="includes">
+        <li><span><b>30 original layouts</b> &mdash; designed specifically for nail salons</span></li>
+        <li><span><b>60 editable pages</b> &mdash; square posts and vertical stories</span></li>
+      </ul>
+
+      <div class="meta-row">
+        <span><strong>Square posts</strong> + <strong>stories</strong></span>
+        <span>Delivered <strong>instantly</strong> as a download</span>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="https://payhip.com/b/nc4Ir" target="_blank" rel="noopener">Buy on Payhip &mdash; $9</a>
+        <a class="btn btn-gold" href="https://rgenstify.gumroad.com/l/nail-salon-template-kit" target="_blank" rel="noopener">Buy on Gumroad &mdash; $9</a>
+      </div>
+    </article>
+
+    <!-- About -->
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About rgenstify</h2>
+      <p>rgenstify is a small, independent shop run by Shawn. Every product here is built from real landlord and small-business experience &mdash; the forms, checklists, and templates are the ones that actually get used, refined into clean files you can rely on from day one.</p>
+      <a class="reddit" href="https://www.reddit.com/user/rgenst/" target="_blank" rel="noopener">Find me on Reddit: u/rgenst</a>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-card">
+      <p><strong>rgenstify</strong> &middot; All products are digital downloads, delivered instantly after checkout.</p>
+      <p>Please note: no refunds once a product has been downloaded. If a file is faulty or corrupted, it will be replaced.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
